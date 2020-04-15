@@ -56,8 +56,8 @@ patient_value2 = [1, 39, 4.0,	0, 0.0, 0.0, 0,	0,
 
 df = pd.DataFrame(np.array(patient_value).reshape(1, -1), columns=predictors)
 
-predict_score = clf_rf.predict(df)
-prob_score = clf_rf.predict_proba(df)
+predict_score = model.predict(df)
+prob_score = model.predict_proba(df)
 
 print('predict score: ', predict_score)
 print('proba score: ', prob_score)
