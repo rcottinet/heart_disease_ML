@@ -10,7 +10,6 @@ You need to install some library
 
 ```python app.py```
 
-
 You can test the app with prepared request in another terminal :
 
 ```python request.py```

@@ -18,9 +18,14 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = prediction[0]
+    if prediction[0] == 0:
+        output = 'No risk of heart disease'
+    elif prediction[0] == 1:
+        output = 'Yes, there is a risk of heart disease'
+    else:
+        output = 'Error in prediction'
 
-    return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
+    return render_template('index.html', prediction_text='Result : $ {}'.format(output))
 
 
 @app.route('/results', methods=['POST'])
@@ -30,8 +35,6 @@ def results():
     prediction = model.predict([np.array(list(data.values()))])
 
     output = prediction[0]
-
-    print(output)
 
     return str(output)
 
