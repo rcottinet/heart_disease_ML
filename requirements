@@ -1,0 +1,9 @@
+numpy
+flask
+pickle
+requests
+sklearn
+matplotlib
+seaborn
+pandas
+warnings
