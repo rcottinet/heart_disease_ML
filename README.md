@@ -5,7 +5,7 @@ Simple prediction of heart disease with random forest algorithm
 
 https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset
 
-👉 :point_right: **Requirements**
+👉 **Requirements**
 You need to install some library
 
 ```python -m pip install requirements.txt```
