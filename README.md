@@ -1,7 +1,11 @@
 # heart_disease_ML
 Simple prediction of heart disease with random forest algorithm
 
-**Requirements**
+:newspaper:	**Data sources**
+
+https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset
+
+👉 :point_right: **Requirements**
 You need to install some library
 
 ```python -m pip install requirements.txt```
@@ -17,3 +21,6 @@ numpy | flask | pickle | requests | sklearn | matplotlib | seaborn | pandas | wa
 You can test the app with prepared request in another terminal :
 
 ```python request.py```
+
+
+:smiley:
