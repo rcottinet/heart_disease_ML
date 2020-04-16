@@ -4,8 +4,12 @@ Simple prediction of heart disease with random forest algorithm
 **Requirements**
 You need to install some library
 
-```python -m pip requirements.txt```
+```python -m pip install requirements.txt```
 
+or manually 
+```
+numpy | flask | pickle | requests | sklearn | matplotlib | seaborn | pandas | warnings
+```
 **Start application with**
 
 ```python app.py```
