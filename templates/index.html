@@ -25,130 +25,158 @@
             <img class="mt-1 img-fluid" src="../static/assets/heart-image.jpg" alt="Responsive image">
 
         </div>
-        <div class="col-8">
+        <div class="col-6">
             <div class="card" style="background: #ffffff">
                 <h2 class="card-header  text-monospace">Informations</h2>
-                <div class="card-body row">
-                    <div class="col">
-                        <form>
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3">
-                                </div>
+                <div class="card-body">
+
+                    <!--   FORM    -->
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="selectGender">Gender</label>
+                                <select class="custom-select" id="selectGender" required>
+                                    <option value="">Gender</option>
+                                    <option value="1">Female</option>
+                                    <option value="de">Male</option>
+                                </select>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3">
-                                </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputAge">Age</label>
+                                <input type="text" class="form-control" id="inputAge">
+                                <small class="form-text text-muted">From 0 to 99</small>
                             </div>
-                            <fieldset class="form-group">
-                                <div class="row">
-                                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="gridRadios1">
-                                                First radio
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios2" value="option2">
-                                            <label class="form-check-label" for="gridRadios2">
-                                                Second radio
-                                            </label>
-                                        </div>
-                                        <div class="form-check disabled">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios3" value="option3" disabled>
-                                            <label class="form-check-label" for="gridRadios3">
-                                                Third disabled radio
-                                            </label>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="form-row">
+                            <fieldset class="form-group col-md-4">
+                                <legend class="col-form-label pt-0">Profil</legend>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioSmoker"
+                                        id="radioSmoker0" value="0" required>
+                                    <label class="custom-control-label" for="radioSmoker0">Nonsmoker</label>
                                 </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioSmoker"
+                                        id="radioSmoker1" value="1" required>
+                                    <label class="custom-control-label" for="radioSmoker1">Smoker</label>
+                                </div>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Ok</div>
                             </fieldset>
-                            <div class="form-group row">
-                                <div class="col-sm-2">Checkbox</div>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                        <label class="form-check-label" for="gridCheck1">
-                                            Example checkbox
-                                        </label>
-                                    </div>
-                                </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputCigsByDay">Cigs by Day</label>
+                                <input type="text" class="form-control" value="0" id="inputCigsByDay">
                             </div>
-                        </form>
-                    </div>
-                    <div class="col">
-                        <form class="needs-validation" novalidate>
-                            <label for="customRange3">Example range</label>
-                            <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                            <div class="form-row">
-                                <div class="col-md-4 mb-3">
-                                    <label for="validationTooltip01">First name</label>
-                                    <input type="text" class="form-control" id="validationTooltip01" value="Mark"
-                                        required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
+                        </div>
+                        <div class="form-row">
+
+                            <fieldset class="form-group col-md-4">
+                                <legend class="col-form-label pt-0">On blood medications</legend>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioBloodMeds"
+                                        id="radioBloodMeds0" value="0" required>
+                                    <label class="custom-control-label" for="radioBloodMeds0">No</label>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="validationTooltip02">Last name</label>
-                                    <input type="text" class="form-control" id="validationTooltip02" value="Otto"
-                                        required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioBloodMeds"
+                                        id="radioBloodMeds1" value="1" required>
+                                    <label class="custom-control-label" for="radioBloodMeds1">Yes</label>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="validationTooltipUsername">Username</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"
-                                                id="validationTooltipUsernamePrepend">@</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="validationTooltipUsername"
-                                            aria-describedby="validationTooltipUsernamePrepend" required>
-                                        <div class="invalid-tooltip">
-                                            Please choose a unique and valid username.
-                                        </div>
-                                    </div>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Ok</div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-row">
+
+                            <fieldset class="form-group col-md-4">
+                                <legend class="col-form-label pt-0">Prevalent Stroke</legend>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioPrevStroke"
+                                        id="radioPrevStroke0" value="0" required>
+                                    <label class="custom-control-label" for="radioPrevStroke0">No</label>
                                 </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioPrevStroke"
+                                        id="radioPrevStroke1" value="1" required>
+                                    <label class="custom-control-label" for="radioPrevStroke1">Yes</label>
+                                </div>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Ok</div>
+                            </fieldset>
+                            <fieldset class="form-group col-md-4">
+                                <legend class="col-form-label pt-0">Prevalent Hyp</legend>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioPrevHyp"
+                                        id="radioPrevHyp0" value="0" required>
+                                    <label class="custom-control-label" for="radioPrevHyp0">No</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioPrevHyp"
+                                        id="radioPrevHyp1" value="1" required>
+                                    <label class="custom-control-label" for="radioPrevHyp1">Yes</label>
+                                </div>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Ok</div>
+                            </fieldset>
+                            <fieldset class="form-group col-md-4">
+                                <legend class="col-form-label pt-0">Diabetes</legend>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioDiabetes"
+                                        id="radioDiabetes0" value="0" required>
+                                    <label class="custom-control-label" for="radioDiabetes0">No</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="radioDiabetes"
+                                        id="radioDiabetes1" value="1" required>
+                                    <label class="custom-control-label" for="radioDiabetes1">Yes</label>
+                                </div>
+                                <div class="invalid-feedback">Please provide a valid value.</div>
+                                <div class="valid-feedback">Ok</div>
+                            </fieldset>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="inputTotChol">TotChol</label>
+                                <input type="text" class="form-control" id="inputTotChol">
+                                <small class="form-text text-muted">mg/dL</small>
                             </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip03">City</label>
-                                    <input type="text" class="form-control" id="validationTooltip03" required>
-                                    <div class="invalid-tooltip">
-                                        Please provide a valid city.
-                                    </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="validationTooltip04">State</label>
-                                    <select class="custom-select" id="validationTooltip04" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                    <div class="invalid-tooltip">
-                                        Please select a valid state.
-                                    </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="validationTooltip05">Zip</label>
-                                    <input type="text" class="form-control" id="validationTooltip05" required>
-                                    <div class="invalid-tooltip">
-                                        Please provide a valid zip.
-                                    </div>
-                                </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputGlucose">Glucose</label>
+                                <input type="text" class="form-control" id="inputGlucose">
+                                <small class="form-text text-muted">mg/dL</small>
                             </div>
-                        </form>
-                    </div>
-                    <button type="button" class="btn btn-info btn-lg btn-block">Predict</button>
+                            <div class="form-group col-md-2">
+                                <label for="inputSysBP">sysBP</label>
+                                <input type="text" class="form-control" id="inputSysBP">
+                                <small class="form-text text-muted">mmHg</small>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputDiaBP">diaBP</label>
+                                <input type="text" class="form-control" id="inputDiaBP">
+                                <small class="form-text text-muted">mmHg</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputBMI">BMI</label>
+                                <input type="text" placeholder="ex : 26.09" class="form-control" id="inputBMI">
+                                <small class="form-text text-muted">Body Mass Index calculated as: Weight (kg) /
+                                    Height(meter-squared)</small>
+                            </div>
+
+                            <div class="form-group col-md-2 offset-md-1">
+                                <label for="inputHeartRate">Heart Rate</label>
+                                <input type="text" class="form-control" id="inputHeartRate">
+                                <small class="form-text text-muted">Beats/Min (Ventricular)</small>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Predict</button>
+                        <button type="reset" class="btn btn-outline-secondary btn-lg btn-block">Cancel</button>
+
+                    </form>
                 </div>
             </div>
         </div>
