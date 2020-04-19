@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Heart Disease Prediction</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -13,6 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 
@@ -31,21 +33,21 @@
                 <div class="card-body">
 
                     <!--   FORM    -->
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" name="informationsForm" role="form" novalidate>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="selectGender">Gender</label>
-                                <select class="custom-select" id="selectGender" required>
+                                <select class="custom-select" id="selectGender" name="gender" required>
                                     <option value="">Gender</option>
                                     <option value="1">Female</option>
-                                    <option value="de">Male</option>
+                                    <option value="0">Male</option>
                                 </select>
                                 <div class="invalid-feedback">Please provide a valid value.</div>
                                 <div class="valid-feedback">Looks good!</div>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputAge">Age</label>
-                                <input type="text" class="form-control" id="inputAge">
+                                <input type="text" class="form-control" id="inputAge" name="age">
                                 <small class="form-text text-muted">From 0 to 99</small>
                             </div>
                         </div>
@@ -67,7 +69,8 @@
                             </fieldset>
                             <div class="form-group col-md-2">
                                 <label for="inputCigsByDay">Cigs by Day</label>
-                                <input type="text" class="form-control" value="0" id="inputCigsByDay">
+                                <input type="text" class="form-control" value="0" id="inputCigsByDay"
+                                    name="inputCigsByDay">
                             </div>
                         </div>
                         <div class="form-row">
@@ -173,38 +176,37 @@
                                 <small class="form-text text-muted">Beats/Min (Ventricular)</small>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Predict</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">Predict</button>
                         <button type="reset" class="btn btn-outline-secondary btn-lg btn-block">Cancel</button>
-
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col pr-4">
+            <div class="card" style="background: #ffffff">
+                <h2 class="card-header  text-monospace">Result</h2>
+                <div class="card-body"> prediction : good </div>
+            </div>
+
+            <div id="app">
+                <p>{{ message }}</p>
+                <button v-on:click="reverseMessage">Reverse Message</button>
+            </div>
         </div>
-    </div>
-    <!-- Main Input For Receiving Query to our ML -->
-    <!-- <form action="{{ url_for('predict')}}" method="post">
-            <input type="text" name="rate" placeholder="rate" required="required" />
-            <input type="text" name="sales in first month" placeholder="sales in first month" required="required" />
-            <input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict the risk of heart disease</button>
-        </form>
-
-        <br>
-        <br>
-        {{ prediction_text }} -->
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+        <script src="../static/index.js"></script>
+
 </body>
 
 

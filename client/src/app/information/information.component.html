@@ -1,0 +1,151 @@
+<div class="mt-5 row">
+
+    <div class="col">
+
+        <img class="mt-1 img-fluid" src="assets/heart-image.jpg" alt="Responsive image">
+
+    </div>
+    <div class="col-6">
+        <div class="card" style="background: #ffffff">
+            <h2 class="card-header  text-monospace">Informations</h2>
+            <div class="card-body">
+
+                <!--   FORM    -->
+                <form class="needs-validation" name="informationsForm" role="form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="selectGender">Gender</label>
+                            <select class="custom-select" id="selectGender" name="gender" [(ngModel)]="gender" required>
+                                <option value="">Gender</option>
+                                <option value="1">Female</option>
+                                <option value="0">Male</option>
+                            </select>
+                            <div class="invalid-feedback">Please provide a valid value.</div>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputAge">Age</label>
+                            <input type="text" class="form-control" id="inputAge" name="age" [(ngModel)]="age">
+                            <small class="form-text text-muted">From 0 to 99</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCigsByDay">Ifsmoker, how many cigs by Day</label>
+                            <input type="text" class="form-control col-4" value="0" id="inputCigsByDay"
+                                [(ngModel)]="cigsByDay" name="inputCigsByDay">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <fieldset class="form-group col-md-4">
+                            <legend class="col-form-label pt-0">On blood medications</legend>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioBloodMeds"
+                                    [(ngModel)]="bloodMeds" id="radioBloodMeds0" value="0" required>
+                                <label class="custom-control-label" for="radioBloodMeds0">No</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioBloodMeds"
+                                    [(ngModel)]="bloodMeds" id="radioBloodMeds1" value="1" required>
+                                <label class="custom-control-label" for="radioBloodMeds1">Yes</label>
+                            </div>
+                            <div class="invalid-feedback">Please provide a valid value.</div>
+                            <div class="valid-feedback">Ok</div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-row">
+
+
+                        <fieldset class="form-group col-md-4">
+                            <legend class="col-form-label pt-0">Prevalent Hyp</legend>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioPrevHyp" id="radioPrevHyp0"
+                                    [(ngModel)]="prevHyp" value="0" required>
+                                <label class="custom-control-label" for="radioPrevHyp0">No</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioPrevHyp" id="radioPrevHyp1"
+                                    [(ngModel)]="prevHyp" value="1" required>
+                                <label class="custom-control-label" for="radioPrevHyp1">Yes</label>
+                            </div>
+                            <div class="invalid-feedback">Please provide a valid value.</div>
+                            <div class="valid-feedback">Ok</div>
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <legend class="col-form-label pt-0">Diabetes</legend>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioDiabetes"
+                                    [(ngModel)]="diabetes" id="radioDiabetes0" value="0" required>
+                                <label class="custom-control-label" for="radioDiabetes0">No</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="radioDiabetes"
+                                    [(ngModel)]="diabetes" id="radioDiabetes1" value="1" required>
+                                <label class="custom-control-label" for="radioDiabetes1">Yes</label>
+                            </div>
+                            <div class="invalid-feedback">Please provide a valid value.</div>
+                            <div class="valid-feedback">Ok</div>
+                        </fieldset>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="inputTotChol">TotChol</label>
+                            <input type="text" class="form-control" id="inputTotChol" [(ngModel)]="totChol"
+                                [ngModelOptions]="{standalone: true}">
+                            <small class="form-text text-muted">mg/dL</small>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputGlucose">Glucose</label>
+                            <input type="text" class="form-control" id="inputGlucose" [(ngModel)]="glucose"
+                                [ngModelOptions]="{standalone: true}">
+                            <small class="form-text text-muted">mg/dL</small>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputSysBP">sysBP</label>
+                            <input type="text" class="form-control" id="inputSysBP" [(ngModel)]="sysBP"
+                                [ngModelOptions]="{standalone: true}">
+                            <small class="form-text text-muted">mmHg</small>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputDiaBP">diaBP</label>
+                            <input type="text" class="form-control" id="inputDiaBP" [(ngModel)]="diaBP"
+                                [ngModelOptions]="{standalone: true}">
+                            <small class="form-text text-muted">mmHg</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" value="Submit"
+                        (click)="send()">Predict</button>
+                    <button type="reset" class="btn btn-outline-secondary btn-lg btn-block"
+                        (click)="cancel()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col pr-4">
+        <div class="card" style="background: #ffffff">
+            <h2 class="card-header  text-monospace">Result</h2>
+            <div class="card-body" *ngIf="result == '1'">
+                <div class="alert alert-danger">
+                    Prediction : BAD
+                </div>
+            </div>
+            <div class="card-body" *ngIf="result == '0'">
+                <div class="alert alert-success">
+                    Prediction : GOOD
+                </div>
+            </div>
+            <div class="card-body" *ngIf="result == '-1' ">
+                <div class="alert alert-primary">
+                    Prediction : NO RESULT
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

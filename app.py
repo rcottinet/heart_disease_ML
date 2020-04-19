@@ -1,9 +1,12 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
+
+cors = CORS(app, resources={r"/foo": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/')
@@ -11,27 +14,13 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
-def predict():
-
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-
-    if prediction[0] == 0:
-        output = 'No risk of heart disease'
-    elif prediction[0] == 1:
-        output = 'Yes, there is a risk of heart disease'
-    else:
-        output = 'Error in prediction'
-
-    return render_template('index.html', prediction_text='Result : $ {}'.format(output))
-
-
 @app.route('/results', methods=['POST'])
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def results():
-
     data = request.get_json(force=True)
+
+    print(data)
+
     prediction = model.predict([np.array(list(data.values()))])
 
     output = prediction[0]
