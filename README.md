@@ -12,7 +12,7 @@ You need to install some library
 
 or manually 
 ```
-numpy | flask | pickle | requests | sklearn | matplotlib | seaborn | pandas | warnings
+numpy | flask | requests | sklearn | matplotlib | seaborn | pandas
 ```
 **Start application with**
 
