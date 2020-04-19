@@ -28,7 +28,7 @@ df_train2 = df_train[predictors]
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(
-    df_train2, df_heartdisease['TenYearCHD'], test_size=0.3, random_state=1)
+    df_train2, df_heartdisease['TenYearCHD'], test_size=0.2, random_state=5)
 
 # Train model
 clf_rf = RandomForestClassifier(random_state=1, n_estimators=40,
@@ -55,8 +55,9 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 predictors = ["male", "age", "cigsPerDay", 'BPMeds', 'prevalentHyp',
               'diabetes', 'totChol', "sysBP", "diaBP", "glucose"]
-patient_value = [1, 65, 20, 0.0, 0, 1, 150, 100.0, 75.0, 66.0]
-patient_value2 = [1, 39, 0.0, 0.0, 0.0, 0, 195.0, 106.0,	70.0, 77.0]
+patient_value2 = [1, 50,    1.0,    0.0,    1,
+                  0,    313.0,    179.0,    92.0,    86.0]
+patient_value2 = [1, 39, 0.0, 0.0, 0.0, 0, 195.0, 106.0, 70.0, 77.0]
 df_predict = pd.DataFrame(
     np.array(patient_value2).reshape(1, -1), columns=predictors)
 

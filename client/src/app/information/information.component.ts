@@ -20,6 +20,7 @@ export class InformationComponent implements OnInit {
   diaBP = '';
 
   result = '-1';
+  proba = '';
 
   constructor(private http: HttpClient) { }
 
@@ -61,7 +62,10 @@ export class InformationComponent implements OnInit {
         glucose: this.glucose
       }).subscribe(data => {
         console.log(data)
-        this.result = data;
+        this.result = data.result;
+        this.proba = String(Math.round(data.proba * 100));
+
+
       })
   }
 

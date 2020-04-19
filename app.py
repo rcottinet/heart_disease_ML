@@ -1,4 +1,5 @@
 import numpy as np
+import json
 from flask import Flask, request, jsonify, render_template
 import pickle
 from flask_cors import CORS, cross_origin
@@ -22,10 +23,17 @@ def results():
     print(data)
 
     prediction = model.predict([np.array(list(data.values()))])
+    prediction_proba = model.predict_proba([np.array(list(data.values()))])
 
-    output = prediction[0]
+    print(prediction_proba)
+    proba = ''
 
-    return str(output)
+    if str(prediction[0]) == 0:
+        proba = str(prediction_proba[0][1])
+    else:
+        proba = str(prediction_proba[0][0])
+
+    return {'result': str(prediction[0]), 'proba': proba}
 
 
 if __name__ == "__main__":

@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputCigsByDay">Ifsmoker, how many cigs by Day</label>
+                            <label for="inputCigsByDay">If smoker how many cigs by Day</label>
                             <input type="text" class="form-control col-4" value="0" id="inputCigsByDay"
                                 [(ngModel)]="cigsByDay" name="inputCigsByDay">
                         </div>
@@ -132,12 +132,15 @@
             <h2 class="card-header  text-monospace">Result</h2>
             <div class="card-body" *ngIf="result == '1'">
                 <div class="alert alert-danger">
-                    Prediction : BAD
+                    Prediction : BAD <br>
+                    Confiance : {{proba}} %
                 </div>
             </div>
             <div class="card-body" *ngIf="result == '0'">
                 <div class="alert alert-success">
-                    Prediction : GOOD
+                    Prediction : GOOD <br>
+                    Fiabilité : {{proba}} %
+
                 </div>
             </div>
             <div class="card-body" *ngIf="result == '-1' ">
