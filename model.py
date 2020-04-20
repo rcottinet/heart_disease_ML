@@ -55,11 +55,12 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 predictors = ["male", "age", "cigsPerDay", 'BPMeds', 'prevalentHyp',
               'diabetes', 'totChol', "sysBP", "diaBP", "glucose"]
-patient_value2 = [1, 50,    1.0,    0.0,    1,
-                  0,    313.0,    179.0,    92.0,    86.0]
-patient_value2 = [1, 39, 0.0, 0.0, 0.0, 0, 195.0, 106.0, 70.0, 77.0]
+
+patient_value = [0,	46,	0.0, 0.0, 0, 0,	250.0, 121.0, 81.0, 76.0]
+patient_value2 = [1, 50, 1.0, 0.0, 1, 0, 313.0, 179.0, 92.0, 86.0]
+
 df_predict = pd.DataFrame(
-    np.array(patient_value2).reshape(1, -1), columns=predictors)
+    np.array(patient_value).reshape(1, -1), columns=predictors)
 
 
 predict_score = clf_rf.predict(df_predict)

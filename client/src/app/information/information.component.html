@@ -17,8 +17,8 @@
                             <label for="selectGender">Gender</label>
                             <select class="custom-select" id="selectGender" name="gender" [(ngModel)]="gender" required>
                                 <option value="">Gender</option>
-                                <option value="1">Female</option>
-                                <option value="0">Male</option>
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
                             </select>
                             <div class="invalid-feedback">Please provide a valid value.</div>
                             <div class="valid-feedback">Looks good!</div>
@@ -96,12 +96,6 @@
                             <small class="form-text text-muted">mg/dL</small>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputGlucose">Glucose</label>
-                            <input type="text" class="form-control" id="inputGlucose" [(ngModel)]="glucose"
-                                [ngModelOptions]="{standalone: true}">
-                            <small class="form-text text-muted">mg/dL</small>
-                        </div>
-                        <div class="form-group col-md-2">
                             <label for="inputSysBP">sysBP</label>
                             <input type="text" class="form-control" id="inputSysBP" [(ngModel)]="sysBP"
                                 [ngModelOptions]="{standalone: true}">
@@ -112,6 +106,12 @@
                             <input type="text" class="form-control" id="inputDiaBP" [(ngModel)]="diaBP"
                                 [ngModelOptions]="{standalone: true}">
                             <small class="form-text text-muted">mmHg</small>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputGlucose">Glucose</label>
+                            <input type="text" class="form-control" id="inputGlucose" [(ngModel)]="glucose"
+                                [ngModelOptions]="{standalone: true}">
+                            <small class="form-text text-muted">mg/dL</small>
                         </div>
                     </div>
                     <div class="form-row">
@@ -132,13 +132,13 @@
             <h2 class="card-header  text-monospace">Result</h2>
             <div class="card-body" *ngIf="result == '1'">
                 <div class="alert alert-danger">
-                    Prediction : BAD <br>
+                    Prediction : positive - Risk of heart disease <br>
                     Confiance : {{proba}} %
                 </div>
             </div>
             <div class="card-body" *ngIf="result == '0'">
                 <div class="alert alert-success">
-                    Prediction : GOOD <br>
+                    Prediction : Negative - No risk of heart disease <br>
                     Fiabilité : {{proba}} %
 
                 </div>

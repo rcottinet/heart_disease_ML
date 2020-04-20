@@ -28,24 +28,6 @@ export class InformationComponent implements OnInit {
   }
 
   send(): void {
-    // let data = {
-    //   gender: this.gender,
-    //   age: this.age,
-    //   smoker: this.smoker,
-    //   cigsByDay: this.cigsByDay,
-    //   bloodMeds: this.bloodMeds,
-    //   prevStroke: this.prevStroke,
-    //   prevHyp: this.prevHyp,
-    //   diabetes: this.diabetes,
-    //   totChol: this.totChol,
-    //   sysBP: this.sysBP,
-    //   diaBP: this.diaBP,
-    //   BMI: this.BMI,
-    //   heartRate: this.heartRate,
-    //   glucose: this.glucose
-    // }
-
-    // console.log(data);
 
     this.http.post<any>(
       'http://127.0.0.1:5000/results',
@@ -63,9 +45,12 @@ export class InformationComponent implements OnInit {
       }).subscribe(data => {
         console.log(data)
         this.result = data.result;
-        this.proba = String(Math.round(data.proba * 100));
+        if (this.result == '0') {
+          this.proba = String(Math.round(data.proba * 100));
+        } else {
+          this.proba = String(100 - Math.round(data.proba * 100));
 
-
+        }
       })
   }
 
