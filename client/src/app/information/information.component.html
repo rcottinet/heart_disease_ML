@@ -15,7 +15,8 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="selectGender">Gender</label>
-                            <select class="custom-select" id="selectGender" name="gender" [(ngModel)]="gender" required>
+                            <select class="custom-select" id="selectGender" name="gender" [(ngModel)]="patient.gender"
+                                required>
                                 <option value="">Gender</option>
                                 <option value="0">Female</option>
                                 <option value="1">Male</option>
@@ -25,7 +26,7 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputAge">Age</label>
-                            <input type="text" class="form-control" id="inputAge" name="age" [(ngModel)]="age">
+                            <input type="text" class="form-control" id="inputAge" name="age" [(ngModel)]="patient.age">
                             <small class="form-text text-muted">From 0 to 99</small>
                         </div>
                     </div>
@@ -33,7 +34,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputCigsByDay">If smoker how many cigs by Day</label>
                             <input type="text" class="form-control col-4" value="0" id="inputCigsByDay"
-                                [(ngModel)]="cigsByDay" name="inputCigsByDay">
+                                [(ngModel)]="patient.cigsByDay" name="inputCigsByDay">
                         </div>
                     </div>
                     <div class="form-row">
@@ -41,12 +42,12 @@
                             <legend class="col-form-label pt-0">On blood medications</legend>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioBloodMeds"
-                                    [(ngModel)]="bloodMeds" id="radioBloodMeds0" value="0" required>
+                                    [(ngModel)]="patient.bloodMeds" id="radioBloodMeds0" value="0" required>
                                 <label class="custom-control-label" for="radioBloodMeds0">No</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioBloodMeds"
-                                    [(ngModel)]="bloodMeds" id="radioBloodMeds1" value="1" required>
+                                    [(ngModel)]="patient.bloodMeds" id="radioBloodMeds1" value="1" required>
                                 <label class="custom-control-label" for="radioBloodMeds1">Yes</label>
                             </div>
                             <div class="invalid-feedback">Please provide a valid value.</div>
@@ -61,12 +62,12 @@
                             <legend class="col-form-label pt-0">Prevalent Hyp</legend>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioPrevHyp" id="radioPrevHyp0"
-                                    [(ngModel)]="prevHyp" value="0" required>
+                                    [(ngModel)]="patient.prevHyp" value="0" required>
                                 <label class="custom-control-label" for="radioPrevHyp0">No</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioPrevHyp" id="radioPrevHyp1"
-                                    [(ngModel)]="prevHyp" value="1" required>
+                                    [(ngModel)]="patient.prevHyp" value="1" required>
                                 <label class="custom-control-label" for="radioPrevHyp1">Yes</label>
                             </div>
                             <div class="invalid-feedback">Please provide a valid value.</div>
@@ -76,12 +77,12 @@
                             <legend class="col-form-label pt-0">Diabetes</legend>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioDiabetes"
-                                    [(ngModel)]="diabetes" id="radioDiabetes0" value="0" required>
+                                    [(ngModel)]="patient.diabetes" id="radioDiabetes0" value="0" required>
                                 <label class="custom-control-label" for="radioDiabetes0">No</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input class="custom-control-input" type="radio" name="radioDiabetes"
-                                    [(ngModel)]="diabetes" id="radioDiabetes1" value="1" required>
+                                    [(ngModel)]="patient.diabetes" id="radioDiabetes1" value="1" required>
                                 <label class="custom-control-label" for="radioDiabetes1">Yes</label>
                             </div>
                             <div class="invalid-feedback">Please provide a valid value.</div>
@@ -91,25 +92,25 @@
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="inputTotChol">TotChol</label>
-                            <input type="text" class="form-control" id="inputTotChol" [(ngModel)]="totChol"
+                            <input type="text" class="form-control" id="inputTotChol" [(ngModel)]="patient.totChol"
                                 [ngModelOptions]="{standalone: true}">
                             <small class="form-text text-muted">mg/dL</small>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputSysBP">sysBP</label>
-                            <input type="text" class="form-control" id="inputSysBP" [(ngModel)]="sysBP"
+                            <input type="text" class="form-control" id="inputSysBP" [(ngModel)]="patient.sysBP"
                                 [ngModelOptions]="{standalone: true}">
                             <small class="form-text text-muted">mmHg</small>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputDiaBP">diaBP</label>
-                            <input type="text" class="form-control" id="inputDiaBP" [(ngModel)]="diaBP"
+                            <input type="text" class="form-control" id="inputDiaBP" [(ngModel)]="patient.diaBP"
                                 [ngModelOptions]="{standalone: true}">
                             <small class="form-text text-muted">mmHg</small>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputGlucose">Glucose</label>
-                            <input type="text" class="form-control" id="inputGlucose" [(ngModel)]="glucose"
+                            <input type="text" class="form-control" id="inputGlucose" [(ngModel)]="patient.glucose"
                                 [ngModelOptions]="{standalone: true}">
                             <small class="form-text text-muted">mg/dL</small>
                         </div>
@@ -133,14 +134,13 @@
             <div class="card-body" *ngIf="result == '1'">
                 <div class="alert alert-danger">
                     Prediction : positive - Risk of heart disease <br>
-                    Confiance : {{proba}} %
+                    Reliability : {{proba}} %
                 </div>
             </div>
             <div class="card-body" *ngIf="result == '0'">
                 <div class="alert alert-success">
                     Prediction : Negative - No risk of heart disease <br>
-                    Fiabilité : {{proba}} %
-
+                    Reliability : {{proba}} %
                 </div>
             </div>
             <div class="card-body" *ngIf="result == '-1' ">
@@ -149,6 +149,26 @@
                 </div>
             </div>
 
+        </div>
+        <div class="card mt-3" style="background: #ffffff">
+            <h2 class="card-header  text-monospace">Historic</h2>
+            <div class="card-body">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action" id="list-home-list" role="tab"
+                        aria-controls="home" (click)="selectPatient(patient_positif)">Exemple n°1 --
+                        {{patient_positif.result}} -- {{patient_positif.proba}}
+                        %</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" role="tab"
+                        aria-controls="home" (click)="selectPatient(patient_negatif)">Exemple n°2 --
+                        {{patient_negatif.result}} -- {{patient_negatif.proba}}
+                        %</a>
+                    <a *ngFor="let patient of histPatient" class="list-group-item list-group-item-action"
+                        id="list-home-list" role="tab" aria-controls="home"
+                        (click)="selectPatient(patient)">{{ patient.date | date:'medium' }} --
+                        {{patient.result}} -- {{patient.proba}}
+                        %</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,8 @@
+patient_value = [0,	46,	0.0, 0.0, 0, ,	250.0, 121.0, 81.0, 76.0]
+patient_value2 = [1, 50, 1.0, 0.0, 1, 0, 313.0, 179.0, 92.0, 86.0]
+
+{'gender': '0', 'age': '46', 'cigsByDay': '0', 'bloodMeds': '0', 'prevHyp': '0', 'diabetes': '0', 'totChol': '250', 'sysBP': '81', 'diaBP': '76', 'glucose': '121'}
+[[0.92240695 0.07759305]]
+
+{'gender': '1', 'age': '50', 'cigsByDay': '1', 'bloodMeds': '0', 'prevHyp': '1', 'diabetes': '0', 'totChol': '313', 'sysBP': '92', 'diaBP': '86', 'glucose': '179'}
+[[0.49374219 0.50625781]]
