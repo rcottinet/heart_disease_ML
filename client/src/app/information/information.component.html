@@ -7,7 +7,7 @@
     </div>
     <div class="col-6">
         <div class="card" style="background: #ffffff">
-            <h2 class="card-header  text-monospace">Informations</h2>
+            <h2 class="card-header  text-monospace">Information</h2>
             <div class="card-body">
 
                 <!--   FORM    -->
@@ -122,8 +122,6 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block" value="Submit"
                         (click)="send()">Predict</button>
-                    <button type="reset" class="btn btn-outline-secondary btn-lg btn-block"
-                        (click)="cancel()">Cancel</button>
                 </form>
             </div>
         </div>
@@ -148,12 +146,11 @@
                     Prediction : NO RESULT
                 </div>
             </div>
-
         </div>
         <div class="card mt-3" style="background: #ffffff">
-            <h2 class="card-header  text-monospace">Historic</h2>
+            <h2 class="card-header  text-monospace">Prediction history</h2>
             <div class="card-body">
-                <div class="list-group" id="list-tab" role="tablist">
+                <div class="list-group mt-3" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action" id="list-home-list" role="tab"
                         aria-controls="home" (click)="selectPatient(patient_positif)">Exemple n°1 --
                         {{patient_positif.result}} -- {{patient_positif.proba}}
@@ -162,6 +159,9 @@
                         aria-controls="home" (click)="selectPatient(patient_negatif)">Exemple n°2 --
                         {{patient_negatif.result}} -- {{patient_negatif.proba}}
                         %</a>
+                </div>
+                <div class="list-group mt-3" id="list-tab" role="tablist">
+
                     <a *ngFor="let patient of histPatient" class="list-group-item list-group-item-action"
                         id="list-home-list" role="tab" aria-controls="home"
                         (click)="selectPatient(patient)">{{ patient.date | date:'medium' }} --

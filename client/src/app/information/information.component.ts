@@ -81,8 +81,8 @@ export class InformationComponent implements OnInit {
         } else {
           this.proba = String(100 - Math.round(data.proba * 100));
         }
-        this.patient.result = this.result
-        this.patient.proba = this.proba
+        this.patient.result = this.result;
+        this.patient.proba = this.proba;
         this.patient.date = Date.now();
         this.histPatient.push(this.patient)
       })
@@ -103,6 +103,6 @@ export class InformationComponent implements OnInit {
   }
 
   selectPatient(patient: Patient): void {
-    this.patient = patient;
+    this.patient = Object.assign(patient);
   }
 }
