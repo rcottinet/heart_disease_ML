@@ -8,7 +8,7 @@ The project was done by Roman COTTINET, Bryan JALIOT and Hajar Rahmoune.
 https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset
 
 **Notebook**
-You will find the Notebook did in Colab in the folder Notebook - Notebook_heart_disease_Project.ipynb
+You will find the Notebook did in Colab in the folder Notebook.
 
 👉 **Requirements**
 You need to install some library
