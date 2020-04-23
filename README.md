@@ -1,9 +1,22 @@
 # heart_disease_ML
 Simple prediction of heart disease with random forest algorithm
 
+The project was done by Roman COTTINET, Bryan JALIOT and Hajar Rahmoune.
+
+**You can find our article related to our project :**
+
+https://medium.com/@jaliot.bryan/predict-heart-disease-using-random-forest-bd84e1dc3adb
+
+**The demo :**
+
+https://www.youtube.com/watch?v=X5tHdYcSr0I
+
 :newspaper:	**Data sources**
 
 https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset
+
+**Notebook**
+You will find the Notebook did in Colab in the folder Notebook.
 
 👉 **Requirements**
 You need to install some library
