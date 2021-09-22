@@ -1,7 +1,7 @@
 # heart_disease_ML
 Simple prediction of heart disease with random forest algorithm
 
-The project was done by Roman COTTINET, Bryan JALIOT and Hajar Rahmoune.
+The project was done by Roman COTTINET, Bryan JALIOT and Hajar RAHMOUNE.
 
 **You can find our article related to our project :**
 
